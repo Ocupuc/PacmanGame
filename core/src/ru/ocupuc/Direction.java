@@ -1,2 +1,8 @@
-package ru.ocupuc;public enum Direction {
+package ru.ocupuc;
+
+public enum Direction {
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT
 }
