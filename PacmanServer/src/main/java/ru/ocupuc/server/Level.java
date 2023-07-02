@@ -23,11 +23,15 @@ public class Level {
 
             while ((line = reader.readLine()) != null) {
                 if (line.startsWith("// Size")) {
+                    // Пропускаем следующую строку
+                    line = reader.readLine();
                     String[] size = line.split(";");
-                    sizeX = Integer.parseInt(size[0].substring(1));
+                    sizeX = Integer.parseInt(size[0]);
                     sizeY = Integer.parseInt(size[1]);
                 } else if (line.startsWith("// Walls")) {
                     readingWalls = true;
+                    // Пропускаем следующую строку
+                    line = reader.readLine();
                 } else if (readingWalls && !line.isEmpty()) {
                     String[] coordinates = line.split(";");
                     int x = Integer.parseInt(coordinates[0]);
